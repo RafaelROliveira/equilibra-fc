@@ -7,8 +7,8 @@ async function criarAdm() {
     try {
         await mongoose.connect(process.env.MONGO_URI);
 
-        const user = "rafael";
-        const plainPassword = "Rafa1821@"; // Defina sua senha
+        const user = "teste";
+        const plainPassword = "123456"; // Defina sua senha
         const hashedPassword = await bcrypt.hash(plainPassword, 10);
 
         const existing = await User.findOne({ user });
@@ -20,12 +20,14 @@ async function criarAdm() {
         const novoAdm = new User({
             user,
             password: hashedPassword,
-            adm: true,
-            vip: true
+            adm: false,
+            vip: false,
+            cloudBackupEnabled: false,
+            isDemo: true
         });
 
         await novoAdm.save();
-        console.log("Usuário ADM criado com sucesso!");
+        console.log("Usuário criado com sucesso!");
 
         process.exit();
     } catch (err) {

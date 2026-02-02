@@ -1,9 +1,18 @@
 const HistoryGame = require("../models/HistoryGame");
+const User = require("../models/User");
 
 // POST /api/history/games
 exports.saveFinalizedGame = async (req, res) => {
   try {
     const owner = req.user.id;
+
+    const u = await User.findById(owner).select("isDemo");
+    if (!u) return res.status(404).json({ msg: "Usuário não encontrado." });
+
+    if (u.isDemo) {
+      return res.status(403).json({ msg: "Conta demo não pode salvar histórico." });
+    }
+
     const payload = req.body;
 
     if (!payload || typeof payload !== "object") {
@@ -32,6 +41,14 @@ exports.getHistory = async (req, res) => {
 exports.deleteHistoryGame = async (req, res) => {
   try {
     const owner = req.user.id;
+
+    const u = await User.findById(owner).select("isDemo");
+    if (!u) return res.status(404).json({ msg: "Usuário não encontrado." });
+
+    if (u.isDemo) {
+      return res.status(403).json({ msg: "Conta demo não pode apagar histórico." });
+    }
+
     const { id } = req.params;
 
     const deleted = await HistoryGame.findOneAndDelete({ _id: id, owner });

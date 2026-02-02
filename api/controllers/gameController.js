@@ -4,6 +4,15 @@ const Game = require("../models/Game");
 exports.saveFinalizedGame = async (req, res) => {
   try {
     const owner = req.user.id;
+
+    const u = await User.findById(owner).select("isDemo");
+    if (!u) return res.status(404).json({ msg: "Usuário não encontrado." });
+
+    if (u.isDemo) {
+      return res.status(403).json({ msg: "Conta demo não pode finalizar jogos." });
+    }
+
+
     const payload = req.body;
 
     if (!payload || typeof payload !== "object") {

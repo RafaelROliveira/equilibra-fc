@@ -7,6 +7,10 @@ const UserSchema = new mongoose.Schema({
   vip: { type: Boolean, default: false },
   userImage: { type: String, default: "" },
 
+  cloudBackupEnabled: { type: Boolean, default: true },
+  isDemo: { type: Boolean, default: false },
+
+
   // ==========================
   // BACKUP OPCIONAL NA NUVEM
   // ==========================
