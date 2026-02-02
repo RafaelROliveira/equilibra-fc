@@ -1,0 +1,243 @@
+/* =========================
+   LAYOUT BASE DA PÁGINA
+   ========================= */
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #0f172a;
+    /* seu fundo */
+    overflow: hidden;
+}
+
+
+/* overlay escuro */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0.938);
+    z-index: 1;
+}
+
+/* tudo acima do overlay */
+.container>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   CONTEÚDO CENTRALIZADO
+   ========================= */
+
+.centerBox {
+    flex: 1;
+    /* ESSENCIAL: ocupa o espaço entre navbar e footer */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 26px;
+    padding: 24px;
+}
+
+/* =========================
+   TÍTULO E BOTÕES
+   ========================= */
+
+.titulo {
+    font-size: 34px;
+    font-family: "Lexend";
+    color: white;
+    font-weight: bold;
+    animation: aparecerTit 1.2s ease-out;
+    margin: 0;
+}
+
+.verde {
+    color: green;
+    font-weight: bold;
+}
+
+.amarelo {
+    color: gold;
+    font-weight: bold;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    animation: slideInRight 0.9s ease-out;
+}
+
+.botao {
+    padding: 10px 22px;
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Lexend";
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: gold;
+}
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lexend", sans-serif;
+}
+
+.modal-conteudo {
+    position: relative;
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    width: min(420px, 92vw);
+    text-align: center;
+}
+
+/* X */
+.fechar-x {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 20px;
+    font-weight: 900;
+    color: #0f172a;
+
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.fechar-x:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.input {
+    width: 90%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 0 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+    margin-bottom: 10px;
+}
+
+.input::placeholder {
+    color: rgba(141, 132, 108, 0.6);
+    font-weight: 700;
+}
+
+.input:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.modalBtn {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    white-space: nowrap;
+    font-family: "Lexend", sans-serif;
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+}
+
+.modalBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.modalTit {
+    font-family: "Lexend", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    margin: 0 0 18px;
+    color: #0f172a;
+}
+
+.mensagemErro {
+    color: red;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.mensagemSucesso {
+    color: green;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* =========================
+   ANIMAÇÕES
+   ========================= */
+
+/* @keyframes slideInRight {
+    from {
+        transform: translateX(160px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aparecerTit {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+} */

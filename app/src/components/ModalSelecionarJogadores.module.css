@@ -1,0 +1,327 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    /* ESSENCIAL em layouts flex */
+}
+
+.titleOnly {
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+/* bloco que NÃO scrolla */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 0 0 auto;
+    min-height: 0;
+}
+
+/* busca */
+.searchRow {
+    display: flex;
+}
+
+.search {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+
+.search:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* chips */
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+        border-color 0.12s ease;
+}
+
+.chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.chipActive {
+    background: #111827;
+    border-color: #111827;
+    color: #fff;
+}
+
+/* ações do topo */
+.topActions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* botões */
+.btn {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btnOutline {
+    background: #fff;
+}
+
+.btnPrimary {
+    background: #111827;
+    border-color: #111827;
+    color: #fff;
+}
+
+/* ✅ LISTA: precisa pegar o espaço que sobra e scrollar */
+.list {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    background: #fff;
+    padding: 10px;
+
+    flex: 1 1 auto;
+    /* pega espaço */
+    min-height: 0;
+    /* permite encolher */
+    overflow: auto;
+    /* scroll AQUI */
+}
+
+/* scrollbar (webkit) */
+.list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    border: 2px solid #fff;
+}
+
+.list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* item */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.12s ease, box-shadow 0.12s ease,
+        border-color 0.12s ease, background 0.12s ease;
+}
+
+.item+.item {
+    margin-top: 10px;
+}
+
+.item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
+    background: #f8fafc;
+}
+
+.itemActive {
+    background: #ecfdf5;
+    border-color: rgba(22, 163, 74, 0.45);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+/* checkbox fake */
+.cb {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid rgba(0, 0, 0, 0.18);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+}
+
+.cbChecked {
+    border-color: #16a34a;
+    background: #16a34a;
+}
+
+.cbMark {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.nome {
+    font-weight: 900;
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.pos {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.perna {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.empty {
+    padding: 12px;
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* footer fixo */
+.footer {
+    flex: 0 0 auto;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.counter {
+    background: #f1f5f9;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.72);
+    font-size: 13px;
+}
+
+.counterBad {
+    background: #fef9c3;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* fonte geral */
+.wrap {
+    font-family: "Lexend", sans-serif;
+}
+
+/* título */
+.titleOnly {
+    font-family: "Lexend", sans-serif;
+    font-weight: 900;
+}
+
+/* (opcional) padroniza textos */
+.search,
+.chip,
+.btn,
+.nome,
+.pos,
+.perna,
+.counter,
+.empty {
+    font-family: "Lexend", sans-serif;
+}
+
+/* footer novo */
+.footer {
+    flex: 0 0 auto;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* lado esquerdo: voltar + contador */
+.footerLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* no mobile quebra bonito */
+}
+
+/* no mobile fica melhor empilhar */
+@media (max-width: 520px) {
+    .footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .footerLeft {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .counter {
+        flex: 1;
+    }
+}

@@ -1,0 +1,736 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Lexend", sans-serif;
+}
+
+.modal-conteudo {
+    position: relative;
+    /* Necessário para posicionar o botão dentro */
+    background-color: white;
+    padding: 22px;
+    border-radius: 8px;
+    width: 600px;
+    text-align: center;
+    box-sizing: content-box;
+
+}
+
+
+
+.input {
+    width: 80%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    padding: 0 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+}
+
+/* Cor do placeholder */
+.input::placeholder {
+    color: rgba(141, 132, 108, 0.6);
+    /* goldenrod com transparência */
+    font-weight: 400;
+    font-weight: 700;
+}
+
+/* Quando o input é focado (selecionado) */
+.input:focus,
+.inputNome:focus,
+.inputPerna:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Placeholder ao focar (opcional para suavidade) */
+.input:focus::placeholder {
+    color: rgba(141, 132, 108, 0.6);
+    /* muda a cor do placeholder no foco */
+}
+
+
+.fechar-x {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0f172a;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.fechar-x:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* botões base */
+.btn {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    white-space: nowrap;
+    font-family: "Lexend", sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btnDark {
+    background: #111827;
+    border-color: #111827;
+    color: #fff;
+}
+
+.btnLight {
+    background: #fff;
+}
+
+.btnGreen {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+}
+
+.modalActions {
+    flex: 0 0 auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.modalTit {
+    font-family: "Lexend", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    margin: 0;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+
+.inputModal {
+    width: 80%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 0 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+    outline: none;
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+}
+
+/* Cor do placeholder */
+.inputModal::placeholder {
+    color: rgba(141, 132, 108, 0.6);
+    /* goldenrod com transparência */
+    font-weight: 400;
+    font-weight: 700;
+}
+
+/* Quando o input é focado (selecionado) */
+.inputModal:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Placeholder ao focar (opcional para suavidade) */
+.input:focus::placeholder {
+    color: rgba(141, 132, 108, 0.6);
+    /* muda a cor do placeholder no foco */
+}
+
+.modalTextos {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    gap: 20px;
+}
+
+.modalText {
+    color: goldenrod;
+    font-weight: 700;
+    font-size: 1.9rem;
+    text-align: center;
+    margin-left: auto;
+}
+
+.modalText2 {
+    margin-bottom: 19px;
+    color: rgb(194, 178, 141);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-right: auto;
+}
+
+
+/* Jogadores */
+
+.lista {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #e7e7e7;
+    border-radius: 0px 10px 10px 0px;
+    border-left: #b8b8b8 solid 4px;
+    gap: 12px;
+    transition: 0.2s ease-out;
+}
+
+.card:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.349);
+    transform: translateY(-5px);
+    border-left: rgb(0, 65, 0) solid 4px;
+}
+
+
+.foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* Cria a borda com gradiente */
+    padding: 3px;
+    /* aumenta um pouco o tamanho da imagem para dar espaço ao gradiente */
+    background: linear-gradient(135deg, #b8b8b8, #b8b8b8);
+    /* gradiente de exemplo */
+
+    /* Usa o background como borda */
+    -webkit-mask:
+        radial-gradient(closest-side, white 98%, transparent 100%);
+    mask:
+        radial-gradient(closest-side, white 98%, transparent 100%);
+
+    opacity: 0.9;
+    /* imagem mais apagada inicialmente */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover .foto {
+    transform: scale(1.1);
+    /* zoom suave */
+    background: linear-gradient(135deg, rgb(0, 65, 0), rgb(0, 65, 0));
+    opacity: 1;
+}
+
+
+
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nome {
+    margin-right: auto;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(0, 65, 0);
+    font-weight: 700;
+}
+
+.posicoes {
+    font-weight: 400;
+    font-size: 14px;
+    color: #777;
+    margin-left: 6px;
+}
+
+.linhaInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+    margin-right: auto;
+    gap: 20px;
+}
+
+
+
+.lista {
+    max-height: 70vh;
+    /* Limita a altura para caber na tela */
+    overflow-y: auto;
+    /* Habilita rolagem vertical */
+}
+
+.btnVerDetalhes {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    display: flex;
+    /* permite centralizar conteúdo interno */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    align-items: center;
+    /* centraliza verticalmente */
+    padding: 6px;
+    /* espaçamento interno opcional */
+    width: 25px;
+    /* tamanho fixo opcional */
+    height: 25px;
+    margin: 0px 7px;
+}
+
+.btnVerDetalhes .iconBotao {
+    width: 25px;
+    height: 25px;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #e7e7e7;
+    transition: all 0.3s ease;
+    border: solid 2px rgb(0, 65, 0);
+}
+
+.btnVerDetalhes:hover .iconBotao {
+    content: url("/images/ver_branco.png");
+    /* troca a imagem no hover */
+    background-color: rgb(0, 65, 0);
+}
+
+
+/* Overall */
+
+.overallWrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+}
+
+.overallLabel {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.overallValue {
+    font-weight: bold;
+    font-size: 14px;
+    transition: transform 0.6s ease;
+}
+
+.barContainer {
+    width: 0;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: width 0.6s ease, margin 0.6s ease;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 65, 0), rgb(35, 158, 35));
+    /* amarelo-laranja */
+    transition: width 0.6s ease;
+    border-radius: 4px;
+}
+
+.card:hover .barContainer {
+    width: 100px;
+    /* aparece empurrando o número */
+    margin-inline: 4px;
+}
+
+.cardExtras {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+        max-height 0.4s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    pointer-events: none;
+}
+
+.cardExtras.show {
+    max-height: 500px;
+    /* ajuste conforme conteúdo */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 10px;
+    pointer-events: auto;
+}
+
+
+.cardExtrasInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    /* background-color: #e7e7e7; */
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+    margin-bottom: 5px;
+}
+
+.chartAndTopStats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.chartWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    /* ou 180px se ainda estiver cortando */
+    margin-top: 0px;
+}
+
+.topStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.bottomStats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 0px;
+    font-size: 13px;
+}
+
+.textStats {
+    color: rgb(0, 65, 0);
+    font-size: 1rem;
+}
+
+.textAtributs {
+    color: rgb(0, 65, 0);
+    font-size: 1rem;
+    margin-right: auto;
+    display: flex;
+    gap: 3px;
+
+}
+
+.iconeBotao {
+    border: none;
+    background: #777777;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    opacity: 0.7;
+    transition: 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px 0px 5px;
+}
+
+.iconeBotao:hover {
+    transform: scale(1.2);
+}
+
+.iconeImagem {
+    width: 20px;
+    height: 20px;
+}
+
+.botoesEditarExcluir {
+    gap: 30px;
+}
+
+.imensuravelWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textoImensuravel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.85);
+    padding: 5px 10px;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.atributoAlto {
+    color: #d60000;
+    /* vermelho forte */
+    font-weight: bold;
+}
+
+
+/* Select subpocicoes */
+.multiSelectWrapper {
+    margin-bottom: 16px;
+}
+
+.removeTag {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Formulario */
+
+.nomeContainer {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+.nomeForm {
+    width: 60%;
+}
+
+.pernaForm {
+    width: 30%;
+}
+
+.inputNome,
+.inputPerna {
+    width: 100%;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+}
+
+.textInputNome {
+    margin-bottom: 4px;
+    margin-right: auto;
+    display: flex;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.multiSelectWrapper {
+    margin-bottom: 1rem;
+}
+
+.multiSelectBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    background-color: #f9f9f9;
+}
+
+.multiSelect {
+    height: 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+}
+
+.tag {
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.removeTag {
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+
+
+.fotoPreview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+    gap: 6px;
+}
+
+.fotoPreview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.removerImagemBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Lexend";
+}
+
+.removerImagemBtn:hover {
+    background-color: #c82333;
+}
+
+.atributosLinha {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 1rem;
+}
+
+.atributosLinha>div {
+    flex: 1;
+    flex-direction: column;
+}
+
+.textInputAtributos {
+    margin-bottom: 4px;
+    margin-right: auto;
+    display: flex;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.textTitulo {
+    font-weight: 900;
+    font-size: 20px;
+    color: #0f172a;
+}
+
+.textNomeLista {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 700;
+}
+
+.textPosicoes {
+    margin-bottom: 4px;
+    margin-right: auto;
+    display: flex;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.textImagem {
+    margin: auto;
+    margin-bottom: 4px;
+    text-align: center;
+    display: flex;
+    font-weight: 800;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+/* imagem jogador */
+.fileInput {
+    display: none;
+}
+
+.fileLabel {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.fileButton {
+    height: 42px;
+    padding: 0 16px;
+    border-radius: 10px;
+    background: #111827;
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: 0.15s;
+}
+
+.fileButton:hover {
+    background: #1f2933;
+    transform: translateY(-1px);
+}

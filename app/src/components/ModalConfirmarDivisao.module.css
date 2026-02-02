@@ -1,0 +1,271 @@
+/* ModalConfirmarDivisao.module.css */
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    font-family: "Lexend", sans-serif;
+}
+
+/* topo */
+.topRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 240px;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.info {
+    color: rgba(0, 0, 0, 0.62);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.topButtons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* botões base */
+.btn {
+    height: 42px;
+    padding: 0 14px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #fff;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    white-space: nowrap;
+    font-family: "Lexend", sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btnDark {
+    background: #111827;
+    border-color: #111827;
+    color: #fff;
+}
+
+.btnLight {
+    background: #fff;
+}
+
+.btnGreen {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #fff;
+}
+
+/* grid dos times */
+.grid {
+    display: grid;
+    gap: 12px;
+    flex: 1 1 auto;
+    min-height: 0;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 860px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.teamCard {
+    /* border: 1px solid rgba(0, 0, 0, 0.08); */
+    border-radius: 14px;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* ✅ aqui corrige o input invadindo o Cap */
+.teamHead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 6px 6px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    align-items: center;
+}
+
+@media (max-width: 520px) {
+    .teamHead {
+        grid-template-columns: 1fr;
+    }
+}
+
+.teamNameInput {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-weight: 900;
+    color: #0f172a;
+    outline: none;
+    /* width: 100%; */
+    background: #fff;
+    font-family: "Lexend", sans-serif;
+}
+
+.teamNameInput:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.capRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+    .capRow {
+        justify-content: space-between;
+    }
+}
+
+.capLabel {
+    font-weight: 900;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.capSelect {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-weight: 800;
+    background: #fff;
+    outline: none;
+    max-width: 240px;
+    width: 180px;
+    font-family: "Lexend", sans-serif;
+}
+
+@media (max-width: 520px) {
+    .capSelect {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+.capSelect:focus {
+    border-color: rgba(22, 163, 74, 0.55);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* área de drop + scroll */
+.teamBody {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 10px 6px 6px;
+    border-radius: 12px;
+    background: #f8fafc;
+    margin-top: 10px;
+}
+
+.teamBody::-webkit-scrollbar {
+    width: 10px;
+}
+
+.teamBody::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    border: 2px solid #f8fafc;
+}
+
+.teamBody::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* linha do jogador */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 12px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    cursor: grab;
+
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.row+.row {
+    margin-top: 10px;
+}
+
+.row:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.nome {
+    font-weight: 900;
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.ovr {
+    font-weight: 900;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ecfdf5;
+    /* border: 1px solid rgba(22, 163, 74, 0.25); */
+    color: #166534;
+}
+
+/* footer */
+.footer {
+    flex: 0 0 auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    /* ✅ evita ficar “colado” quando tem navbar móvel */
+    padding-bottom: env(safe-area-inset-bottom);
+}

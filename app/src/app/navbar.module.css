@@ -1,0 +1,292 @@
+.navbar {
+    /* height: 70px; */
+    background: linear-gradient(180deg, rgb(0, 95, 0), rgb(0, 65, 0));
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    /* border-bottom: rgb(229, 255, 0) solid 3px; */
+}
+
+/* ====== DESKTOP (padrão) ====== */
+.navTop {
+    display: contents;
+    /* no desktop: ignora wrapper, volta a ser uma barra só */
+}
+
+.navBottom {
+    display: contents;
+    /* idem */
+}
+
+.navbar-left {
+    width: auto;
+}
+
+.navbar-left .logo {
+    font-size: 2rem;
+    font-family: "Tilt Warp";
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.verde {
+    color: #0b860b;
+}
+
+.amarelo {
+    color: #ffe760;
+}
+
+.navbar-center {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* permite centralizar no meio */
+}
+
+.nav-item {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+    padding: 5px;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    border-bottom: solid 2px rgb(255, 255, 255);
+}
+
+.nav-icon {
+    background-color: rgba(0, 65, 0, 0);
+    width: 25px;
+    height: 25px;
+    transition: transform 0.2s ease;
+}
+
+.textNav {
+    font-family: "Lexend";
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+}
+
+/* ====== BOTÃO SAIR (substitui Perfil) ====== */
+.navbar-right {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLogout {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+.navLogout:hover {
+    transform: scale(1.1);
+    border-bottom: 2px solid #fff;
+}
+
+.logout-img {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 65, 0, 0);
+}
+
+/* ========= ATIVO (fica como hover sem hover) ========= */
+.active {
+    transform: scale(1.1);
+    border-bottom: solid 2px rgb(255, 255, 255);
+}
+
+/* Para o link ativo também “dar vida” no ícone */
+.active .nav-icon {
+    transform: scale(1.05);
+}
+
+/* ====== remove coisas antigas de menu/perfil (não usa mais) ====== */
+.navUser,
+.perfilMenu,
+.perfilItem,
+.perfilItemBtn,
+.perfil-img {
+    display: none;
+}
+
+/* =======================
+   MOBILE HUB STYLE
+   ======================= */
+@media (max-width: 720px) {
+    .navbar {
+        height: auto;
+        padding: 12px 14px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* no mobile: navTop e navBottom voltam a existir */
+    .navTop {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navBottom {
+        display: block;
+        width: 100%;
+    }
+
+    /* topo: logo + sair */
+    .navbar-left {
+        width: auto;
+    }
+
+    .navbar-right {
+        width: auto;
+    }
+
+    /* esconder texto do sair no mobile (opcional) */
+    .navLogout .textNav {
+        display: none;
+    }
+
+    /* Barra fixa embaixo */
+    .navBottom {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+
+        background: linear-gradient(to right, rgb(0, 65, 0), rgb(136, 100, 0));
+        border-top: rgba(255, 255, 255, 0.12) solid 1px;
+
+        padding: 10px 16px;
+    }
+
+    .navbar-center {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+        flex: unset;
+    }
+
+    .nav-item {
+        width: auto;
+        padding: 6px 10px;
+    }
+
+    /* Mobile: links sem texto */
+    .nav-item .textNav {
+        display: none;
+    }
+}
+
+/* =========================
+   DESKTOP: 1 linha (logo | links | sair)
+   ========================= */
+.navTop {
+    display: none;
+    /* no desktop, não usa top/bottom */
+}
+
+.navBottom {
+    display: none;
+    /* no desktop, não usa top/bottom */
+}
+
+/* desktop usa a navbar normal: left, center, right */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* =========================
+   MOBILE: HUB (top + bottom)
+   ========================= */
+@media (max-width: 720px) {
+
+    /* esconde o layout de desktop */
+    .navbar-left,
+    .navbar-center,
+    .navbar-right {
+        display: none;
+    }
+
+    /* ativa top/bottom no mobile */
+    .navTop {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navBottom {
+        display: block;
+        width: 100%;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 12px 14px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navBottom {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+
+        background: linear-gradient(to right, rgb(0, 65, 0), rgb(136, 100, 0));
+        border-top: rgba(255, 255, 255, 0.12) solid 1px;
+
+        padding: 10px 16px;
+    }
+
+    .navBottom .navbar-center {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .nav-item .textNav {
+        display: none;
+    }
+
+    .navLogout .textNav {
+        display: none;
+    }
+}
