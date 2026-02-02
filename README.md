@@ -62,18 +62,28 @@ https://equilibra-fc.vercel.app
 
 ### Backend
 
-    cd api
-    npm install
-    npm run dev
+    cd api  
+    npm install  
+    npm run dev  
+
+Crie um arquivo `.env` na pasta `api` com as seguintes variáveis:
+
+- MONGO_URI=...
+- JWT_SECRET=...
+
+---
 
 ### Frontend
 
-    cd app
-    npm install
-    npm run dev
+    cd app  
+    npm install  
+    npm run dev  
+
+Crie um arquivo `.env.local` na pasta `app` com as seguintes variáveis:
+
+- NEXT_PUBLIC_API_URL=http://localhost:5000
 
 ## Autor
 
 Projeto desenvolvido por **Rafael R. Oliveira**  
 GitHub: https://github.com/RafaelROliveira
-
