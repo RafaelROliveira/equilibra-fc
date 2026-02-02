@@ -64,7 +64,7 @@ https://equilibra-fc.vercel.app
 
     cd api  
     npm install  
-    npm run dev  
+    npm start  
 
 Crie um arquivo `.env` na pasta `api` com as seguintes variáveis:
 
