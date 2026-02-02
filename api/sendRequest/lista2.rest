@@ -1,0 +1,228 @@
+### Criar lista (POST /playerList)
+POST http://localhost:3000/api/lists/playerList
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nomeLista": "Time para Testes"
+}
+
+###
+
+### Listar listas do usuário (GET /playerList)
+GET http://localhost:5000/api/lists/playerList
+Authorization: Bearer {{token}}
+
+###
+
+### Adicionar jogador na lista (POST /playerList/:id/addPlayer)
+@id = 68698125a03076b4989ccb45
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjcwZmUxMjRjZmY3YmYxYjNjZDQyNiIsInVzZXIiOiJhZG1pbiIsImFkbSI6dHJ1ZSwiaWF0IjoxNzUyMjkyNzQ4LCJleHAiOjE3NTIzNzkxNDh9.rI1LO0TRpNiE0SDs4grLnP_KTeZL7YTd7OT1Fv1NPho
+
+### Adicionar jogador
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Cristiano Ronaldo",
+  "perna": "Direita",
+  "posicao": ["Atacante", "Lateral"],
+  "qi": 90,
+  "finalizacao": 95,
+  "skills": 92,
+  "vitorias": 500,
+  "derrotas": 100,
+  "empates": 50,
+  "jogosJogados": 650,
+  "mvps": 70,
+  "foto": "https://linkdafoto.com/cristiano.jpg"
+}
+
+### Jogador 2
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Lionel Messi",
+  "perna": "Esquerda",
+  "posicao": ["Meio-Campo", "Atacante"],
+  "qi": 95,
+  "finalizacao": 94,
+  "skills": 97,
+  "vitorias": 600,
+  "derrotas": 80,
+  "empates": 40,
+  "jogosJogados": 720,
+  "mvps": 90,
+  "foto": "https://linkdafoto.com/messi.jpg"
+}
+
+### Jogador 3
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Neymar Jr",
+  "perna": "Direita",
+  "posicao": ["Atacante", "Meio-Campo"],
+  "qi": 88,
+  "finalizacao": 89,
+  "skills": 96,
+  "vitorias": 300,
+  "derrotas": 70,
+  "empates": 30,
+  "jogosJogados": 400,
+  "mvps": 55,
+  "foto": "https://linkdafoto.com/neymar.jpg"
+}
+
+### Jogador 4
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Kylian Mbappé",
+  "perna": "Direita",
+  "posicao": ["Atacante"],
+  "qi": 87,
+  "finalizacao": 93,
+  "skills": 95,
+  "vitorias": 220,
+  "derrotas": 40,
+  "empates": 25,
+  "jogosJogados": 285,
+  "mvps": 40,
+  "foto": "https://linkdafoto.com/mbappe.jpg"
+}
+
+### Jogador 5
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Kevin De Bruyne",
+  "perna": "Direita",
+  "posicao": ["Meio-Campo"],
+  "qi": 92,
+  "finalizacao": 85,
+  "skills": 89,
+  "vitorias": 350,
+  "derrotas": 60,
+  "empates": 40,
+  "jogosJogados": 450,
+  "mvps": 35,
+  "foto": "https://linkdafoto.com/debruyne.jpg"
+}
+
+### Jogador 6
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Virgil van Dijk",
+  "perna": "Direita",
+  "posicao": ["Zagueiro"],
+  "qi": 85,
+  "finalizacao": 60,
+  "skills": 70,
+  "vitorias": 300,
+  "derrotas": 50,
+  "empates": 30,
+  "jogosJogados": 380,
+  "mvps": 20,
+  "foto": "https://linkdafoto.com/vandijk.jpg"
+}
+
+### Jogador 7
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Sergio Ramos",
+  "perna": "Direita",
+  "posicao": ["Zagueiro"],
+  "qi": 80,
+  "finalizacao": 70,
+  "skills": 75,
+  "vitorias": 400,
+  "derrotas": 70,
+  "empates": 50,
+  "jogosJogados": 520,
+  "mvps": 15,
+  "foto": "https://linkdafoto.com/ramos.jpg"
+}
+
+### Jogador 8
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Luka Modric",
+  "perna": "Direita",
+  "posicao": ["Meio-Campo"],
+  "qi": 94,
+  "finalizacao": 80,
+  "skills": 88,
+  "vitorias": 480,
+  "derrotas": 90,
+  "empates": 60,
+  "jogosJogados": 630,
+  "mvps": 25,
+  "foto": "https://linkdafoto.com/modric.jpg"
+}
+
+### Jogador 9
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Marcelo",
+  "perna": "Esquerda",
+  "posicao": ["Lateral"],
+  "qi": 85,
+  "finalizacao": 75,
+  "skills": 90,
+  "vitorias": 400,
+  "derrotas": 70,
+  "empates": 50,
+  "jogosJogados": 520,
+  "mvps": 18,
+  "foto": "https://linkdafoto.com/marcelo.jpg"
+}
+
+### Jogador 10
+POST http://localhost:3000/api/lists/playerList/{{id}}/addPlayer
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Alisson Becker",
+  "perna": "Direita",
+  "posicao": ["Goleiro"],
+  "qi": 88,
+  "finalizacao": 50,
+  "skills": 60,
+  "vitorias": 300,
+  "derrotas": 40,
+  "empates": 30,
+  "jogosJogados": 370,
+  "mvps": 22,
+  "foto": "https://linkdafoto.com/alisson.jpg"
+}
+
+
+###
+
+### Deletar lista (DELETE /playerList/:id)
+DELETE http://localhost:3000/playerList/{{lista_id}}
+Authorization: Bearer <seu_token_aqui>
+

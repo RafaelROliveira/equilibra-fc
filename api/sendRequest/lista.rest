@@ -1,0 +1,8 @@
+### Registrar uma lista de jogadores (cria a lista vazia)
+POST http://localhost:3000/api/lists/playerList
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjcwZmUxMjRjZmY3YmYxYjNjZDQyNiIsInVzZXIiOiJhZG1pbiIsImFkbSI6dHJ1ZSwiaWF0IjoxNzUxNTkwODkxLCJleHAiOjE3NTE2MzQwOTF9.DKP2_o4HwPbczQ1FdqMCXiwQfu5vZz111L2N-56MYKo
+Content-Type: application/json
+
+{
+  "nomeLista": "Time dos Brabos"
+}

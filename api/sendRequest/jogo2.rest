@@ -1,0 +1,49 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjcwZmUxMjRjZmY3YmYxYjNjZDQyNiIsInVzZXIiOiJhZG1pbiIsImFkbSI6dHJ1ZSwiaWF0IjoxNzUxOTE3ODk1LCJleHAiOjE3NTIwMDQyOTV9.glenRhmLjEW-ZNAU--YnDak4VFHxnWZw-RgDDpA14As
+@listaId = 68698125a03076b4989ccb45
+@idJogador1 = 68698176a03076b4989ccb48
+@idJogador2 = 68698179a03076b4989ccb4c
+@idJogador3 = 6869817aa03076b4989ccb51
+@idJogador4 = 6869817ca03076b4989ccb57
+@idJogador5 = 6869817da03076b4989ccb5e
+@idJogador6 = 6869817fa03076b4989ccb66
+@idJogador7 = 68698180a03076b4989ccb6f
+@idJogador8 = 68698181a03076b4989ccb79
+@idJogador9 = 68698183a03076b4989ccb84
+@idJogador10 = 68698184a03076b4989ccb90
+
+### Criar Jogo
+POST http://localhost:3000/api/games
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nomeJogo": "testes",
+  "dataJogo": "2025-07-05",
+  "modalidade": "Futebol",
+  "capitaoTime1": "{{idJogador1}}",
+  "capitaoTime2": "{{idJogador6}}",
+  "listaId": "{{listaId}}",
+  "time1Ids": ["{{idJogador1}}", "{{idJogador2}}", "{{idJogador3}}", "{{idJogador4}}", "{{idJogador5}}"],
+  "time2Ids": ["{{idJogador6}}", "{{idJogador7}}", "{{idJogador8}}", "{{idJogador9}}", "{{idJogador10}}"]
+}
+
+
+### Buscar Jogos
+GET http://localhost:3000/api/games
+Authorization: Bearer {{token}}
+
+
+### Finalizar Jogo
+# Substituir pelo ID do jogo retornado na criação
+@jogoId = 686983ba6352510427c9f3fc
+
+PATCH http://localhost:3000/api/games/{{jogoId}}/finalizar
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "placarTime1": 3,
+  "placarTime2": 2,
+  "mvpTime1": "{{idJogador3}}",
+  "mvpTime2": "{{idJogador7}}"
+}

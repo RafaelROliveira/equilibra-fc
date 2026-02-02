@@ -1,0 +1,183 @@
+### Criar Jogo (POST /api/games)
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjcwZmUxMjRjZmY3YmYxYjNjZDQyNiIsInVzZXIiOiJhZG1pbiIsImFkbSI6dHJ1ZSwiaWF0IjoxNzUxNzQzMzQ3LCJleHAiOjE3NTE3ODY1NDd9.-QRkfxFwSufgAEuS6-TPD6tEO_0TNe_zRjJ_85HoKm8
+
+POST http://localhost:3000/api/games
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nomeJogo": "Clássico dos Testes",
+  "dataJogo": "2025-07-04 20:00",
+  "modalidade": "Futebol Society",
+  "capitaoTime1": "Cristiano Ronaldo",
+  "capitaoTime2": "Lionel Messi",
+  "time1": [
+    {
+      "_id": "68681a7df90be930beb33f5d",
+      "nome": "Cristiano Ronaldo",
+      "perna": "Direita",
+      "posicao": ["Atacante", "Lateral"],
+      "qi": 90,
+      "finalizacao": 95,
+      "skills": 92,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/cristiano.jpg"
+    },
+    {
+      "_id": "68681a88f90be930beb33f66",
+      "nome": "Neymar Jr",
+      "perna": "Direita",
+      "posicao": ["Atacante", "Meio-Campo"],
+      "qi": 88,
+      "finalizacao": 89,
+      "skills": 96,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/neymar.jpg"
+    },
+    {
+      "_id": "68681a9bf90be930beb33f8e",
+      "nome": "Luka Modric",
+      "perna": "Direita",
+      "posicao": ["Meio-Campo"],
+      "qi": 94,
+      "finalizacao": 80,
+      "skills": 88,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/modric.jpg"
+    },
+    {
+      "_id": "68681a9df90be930beb33f99",
+      "nome": "Marcelo",
+      "perna": "Esquerda",
+      "posicao": ["Lateral"],
+      "qi": 85,
+      "finalizacao": 75,
+      "skills": 90,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/marcelo.jpg"
+    },
+    {
+      "_id": "68681a9ef90be930beb33fa5",
+      "nome": "Alisson Becker",
+      "perna": "Direita",
+      "posicao": ["Goleiro"],
+      "qi": 88,
+      "finalizacao": 50,
+      "skills": 60,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/alisson.jpg"
+    }
+  ],
+  "time2": [
+    {
+      "_id": "68681a86f90be930beb33f61",
+      "nome": "Lionel Messi",
+      "perna": "Esquerda",
+      "posicao": ["Meio-Campo", "Atacante"],
+      "qi": 95,
+      "finalizacao": 94,
+      "skills": 97,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/messi.jpg"
+    },
+    {
+      "_id": "68681a89f90be930beb33f6c",
+      "nome": "Kylian Mbappé",
+      "perna": "Direita",
+      "posicao": ["Atacante"],
+      "qi": 87,
+      "finalizacao": 93,
+      "skills": 95,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/mbappe.jpg"
+    },
+    {
+      "_id": "68681a8bf90be930beb33f73",
+      "nome": "Kevin De Bruyne",
+      "perna": "Direita",
+      "posicao": ["Meio-Campo"],
+      "qi": 92,
+      "finalizacao": 85,
+      "skills": 89,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/debruyne.jpg"
+    },
+    {
+      "_id": "68681a8cf90be930beb33f7b",
+      "nome": "Virgil van Dijk",
+      "perna": "Direita",
+      "posicao": ["Zagueiro"],
+      "qi": 85,
+      "finalizacao": 60,
+      "skills": 70,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/vandijk.jpg"
+    },
+    {
+      "_id": "68681a99f90be930beb33f84",
+      "nome": "Sergio Ramos",
+      "perna": "Direita",
+      "posicao": ["Zagueiro"],
+      "qi": 80,
+      "finalizacao": 70,
+      "skills": 75,
+      "vitorias": 0,
+      "derrotas": 0,
+      "empates": 0,
+      "jogosJogados": 0,
+      "mvps": 0,
+      "foto": "https://linkdafoto.com/ramos.jpg"
+    }
+  ]
+}
+
+### Finalizar Jogo (PUT /api/games/:id/finalizar)
+@idJogo = 68681e2516e2d689cf66b35b
+
+PATCH http://localhost:3000/api/games/{{idJogo}}/finalizar
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "placarTime1": 10,
+  "placarTime2": 5,
+  "mvpTime1": "Neymar Jr",
+  "mvpTime2": "Sergio Ramos"
+}
+
