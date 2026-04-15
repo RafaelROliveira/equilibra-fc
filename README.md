@@ -1,6 +1,6 @@
 # EquilibraFC ⚽
 
-Plataforma web para gerenciamento de jogos de futebol (Fut7 / Futsal), com foco em organização de partidas, divisão de times, histórico e estatísticas.
+Plataforma web para gerenciamento de jogos de futebol, com foco em organização de partidas, divisão de times, histórico e estatísticas.
 
 Projeto desenvolvido com foco em **prática de desenvolvimento full stack**, arquitetura de aplicações web e integração entre frontend e backend.
 
